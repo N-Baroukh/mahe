@@ -1,0 +1,81 @@
+body {
+    background-color: #f4f1ea; /* Couleur mur crème/papier */
+    background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+    background-size: 20px 20px; /* Petit motif de points pour le relief */
+    margin: 0;
+    font-family: 'Dancing Script', cursive, serif;
+    color: #4a4a4a;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.subtitle { font-size: 1.2rem; opacity: 0.8; }
+
+.wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Le style Polaroïd */
+.photo-frame {
+    position: relative;
+    background: white;
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, z-index 0s;
+    cursor: pointer;
+}
+
+.photo-frame img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #eee;
+}
+
+.photo-frame:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    z-index: 100;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* La Punaise */
+.pin {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 200px; /* Longueur de l'ombre de la punaise */
+    pointer-events: none;
+}
+
+.pin::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle at 30% 30%, #ff4d6d, #b91c1c);
+    border-radius: 50%;
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+/* Décos autour */
+.decoration {
+    position: absolute;
+    font-size: 1.5rem;
+    pointer-events: none;
+}
