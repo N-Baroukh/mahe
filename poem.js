@@ -1,0 +1,71 @@
+const steps = [
+    { type: "write", text: "Je t’écris sans trop savoir pourquoi,\n" },
+    { type: "write", text: "Peut-être pour combler un silence.\n" },
+
+    { type: "write", text: "Les mots tremblent quand je pense à toi.\n" },
+    { type: "deleteLine" },
+
+    { type: "write", text: "Les mots hésitent, puis restent.\n" },
+
+    { type: "write", text: "Le temps passe différemment depuis toi,\n" },
+    { type: "write", text: "Comme si les minutes avaient appris ton prénom.\n" },
+
+    { type: "write", text: "Je voulais écrire quelque chose de simple,\n" },
+    { type: "deleteLine" },
+
+    { type: "write", text: "Je voulais écrire quelque chose de vrai.\n" },
+
+    { type: "write", text: "Alors je laisse ces phrases imparfaites,\n" },
+    { type: "write", text: "Parce qu’elles me ressemblent un peu.\n" }
+];
+
+const el = document.getElementById("poem");
+let stepIndex = 0;
+let charIndex = 0;
+
+function deleteLastLineCharByChar(callback) {
+    let text = el.textContent;
+    const lastNewLine = text.lastIndexOf("\n", text.length - 2);
+    const start = lastNewLine === -1 ? 0 : lastNewLine + 1;
+
+    let line = text.slice(start);
+
+    function erase() {
+        if (line.length > 0) {
+            line = line.slice(0, -1);
+            el.textContent = text.slice(0, start) + line;
+            setTimeout(erase, 35);
+        } else {
+            el.textContent = text.slice(0, start);
+            callback();
+        }
+    }
+
+    erase();
+}
+
+function run() {
+    const step = steps[stepIndex];
+    if (!step) return;
+
+    if (step.type === "write") {
+        if (charIndex < step.text.length) {
+            el.textContent += step.text.charAt(charIndex);
+            charIndex++;
+            setTimeout(run, 40);
+        } else {
+            charIndex = 0;
+            stepIndex++;
+            setTimeout(run, 600);
+        }
+    }
+
+    if (step.type === "deleteLine") {
+        deleteLastLineCharByChar(() => {
+            stepIndex++;
+            setTimeout(run, 400);
+        });
+    }
+}
+
+run();
