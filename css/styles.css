@@ -1,0 +1,80 @@
+body {
+    background: radial-gradient(circle at top, #020617, #000);
+    color: #e5e7eb;
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+}
+
+.poem {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    white-space: pre-line;
+    text-align: left; /* Garder le poème aligné à gauche */
+    display: inline-block;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    background: #e5e7eb;
+    margin-left: 4px;
+    animation: blink 0.9s infinite;
+    height: 1.3em;
+    vertical-align: bottom;
+}
+
+/* Zone des jeux */
+.games-hidden {
+    display: none;
+    opacity: 0;
+}
+
+.games-visible {
+    display: block;
+    margin-top: 40px;
+    animation: fadeIn 2s forwards;
+}
+
+.games-title {
+    font-style: italic;
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+.games-list {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Ajoute ça à ton CSS actuel */
+.game-card {
+    padding: 12px 20px;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    color: #e5e7eb;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    user-select: none; /* Évite de sélectionner le texte au clic */
+}
+
+.game-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ff4d6d;
+    transform: translateY(-3px);
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes fadeIn { to { opacity: 1; } }

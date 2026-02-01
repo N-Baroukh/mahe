@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Quizz des Indices</title>
+    <link rel="stylesheet" href="../css/quizz.css">
+</head>
+<body>
+
+<div class="quizz-container">
+    <div class="progress-wrapper">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div class="hint-display">
+        Indice du mot de passe : <span id="password-hint">_ _ _ _ _ _ _ _ _ _</span>
+    </div>
+
+    <div id="quiz-box">
+        <h2 id="question-text">Chargement de la première épreuve...</h2>
+        <div id="options-container" class="options-grid">
+        </div>
+    </div>
+
+    <div id="final-screen" style="display: none;">
+        <h1>Félicitations ! 🎉</h1>
+        <p>Tu as récolté tous les indices.</p>
+        <div class="final-password-box" id="revealed-password"></div>
+        <a href="index.html" class="btn-return">Retourner au Poème</a>
+    </div>
+</div>
+
+<script src="../js/quizz.js"></script>
+</body>
+</html>

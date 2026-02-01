@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poème vivant</title>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="container">
+    <div class="poem-wrapper">
+        <div class="poem" id="poem"></div><span class="cursor" id="cursor"></span>
+    </div>
+
+    <div class="games-list">
+        <a href="box.html" class="game-card">🎁 La Boîte Mystère</a>
+        <a href="quizz.html" class="game-card">✨ Quizz Ultime</a>
+        <div onclick="unlockSecret()" class="game-card" style="cursor: pointer;">
+            🔒 Mystère
+        </div>
+    </div>
+</div>
+
+<script src="../js/poem.js"></script>
+</body>
+</html>
