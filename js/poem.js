@@ -20,7 +20,7 @@ let stepIndex = 0;
 let charIndex = 0;
 
 function showGames() {
-    cursor.style.display = "none"; // On cache le curseur
+    cursor.style.display = "none";
     gamesContainer.classList.remove("games-hidden");
     gamesContainer.classList.add("games-visible");
 }
@@ -46,8 +46,6 @@ function deleteLastLineCharByChar(callback) {
 
 function run() {
     const step = steps[stepIndex];
-
-    // Si plus de steps, on affiche les jeux
     if (!step) {
         setTimeout(showGames, 1000);
         return;
@@ -76,10 +74,9 @@ run();
 function unlockSecret() {
     const password = prompt("Veuillez entrer le mot de passe secret pour accéder au mystère :");
 
-    // Remplace 'Amour' par le mot de passe de ton choix
     if (password === "MAGOUILLES" || password === "Magouilles" || password === "magouilles") {
         alert("Accès accordé... ❤️");
-        window.location.href = "galerie.html"; // La page vers laquelle rediriger
+        window.location.href = "galerie.html";
     } else if (password !== null) {
         alert("Mot de passe incorrect. Le secret reste gardé. Fais le quizz pour le découvrir !");
     }

@@ -3,8 +3,6 @@ const maxClicks = 50;
 const box = document.getElementById('box-container');
 const counterDisplay = document.getElementById('counter');
 const message = document.getElementById('message');
-
-// Liste des emojis aléatoires
 const emojis = ['🥰', '❤️', '💖', '✨', '😍', '💘', '🌹', '💕','❤️‍🔥'];
 
 box.addEventListener('click', (e) => {
@@ -13,11 +11,8 @@ box.addEventListener('click', (e) => {
     count++;
     counterDisplay.innerText = `Cliqué : ${count} / ${maxClicks}`;
 
-    // Choisir un emoji au hasard dans la liste
     const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
     createEmoji(e.clientX, e.clientY, randomEmoji);
-
-    // Affaiblissement progressif
     let progress = count / maxClicks;
     box.style.opacity = 1 - (progress * 0.7);
     box.style.filter = `grayscale(${progress * 100}%) blur(${progress * 2}px)`;
@@ -29,14 +24,10 @@ box.addEventListener('click', (e) => {
     if (count === maxClicks) {
         box.style.display = 'none';
         counterDisplay.style.display = 'none';
-
-        // --- LA MODIFICATION ICI ---
-        message.style.display = 'block'; // On s'assure qu'il est dans le DOM
+        message.style.display = 'block';
         setTimeout(() => {
-            message.classList.add('show'); // On ajoute la classe qui gère l'opacité et l'animation
+            message.classList.add('show');
         }, 10);
-        // ----------------------------
-
         finalExplosion();
     }
 });
@@ -45,7 +36,6 @@ function createEmoji(x, y, char) {
     const emoji = document.createElement('div');
     emoji.classList.add('emoji');
     emoji.innerText = char;
-    // On centre l'emoji sur le clic
     emoji.style.left = `${x - 25}px`;
     emoji.style.top = `${y - 25}px`;
 
