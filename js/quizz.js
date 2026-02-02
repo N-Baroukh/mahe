@@ -1,15 +1,15 @@
 const finalPassword = "MAGOUILLES";
 const questions = [
-    { q: "Quand on c'est mis ensemble ?", a: ["21 Janvier", "20 Avril", "23 Decembre", "20 Janvier"], correct: 3 },
-    { q: "Le nombre de voies anterieur dans WWM (juste pour te faire chier celle la ;)) ?", a: ["40", "35", "37", "41"], correct: 2 },
-    { q: "Ton partie politique", a: ["Du même que moon", "Ga...(jpp ecrire plus que ca)", "Droite", "Tractopelle ascendant renard (idée de moon)"], correct: 0 },
-    { q: "Quel astre brille tout le temps ?", a: ["Le Soleil", "Les étoiles", "La Lune", "Mahé (bas ouai logique)"], correct: 3 },
-    { q: "Quel date on c'est marié sur WWM ?", a: ["Jpp de tes questions de con 😭", "17 Janvier ", "19 Janvier", "16 Janvier"], correct: 1 },
-    { q: "Quelle est la qualité que j'admire le plus chez toi ?", a: ["Rien 💀", "Ta bonté", "Tout t'es la meilleure au monde je t'aime ❤️", "Laisse moi réflechir..."], correct: 2 },
-    { q: "Le nom de notre futur chien ?", a: ["Le Z", "Le H (je t'es à l'oeil 👀)", "Misty", "Wouaf wouaf (ouai je sais 0 inspi)"], correct: 2 },
-    { q: "Mon animal préféré ?", a: ["Chien", "Halouf", "Orcque", "Aigle"], correct: 2 },
-    { q: "Nombre perso dans one piece  ?", a: ["856", "Va te faire foutre ❤️", "936", "1012"], correct: 2 },
-    { q: "Dernière question : Prête pour le secret ?", a: ["Pas encore", "Oui ❤️✨", "Peut-être", "Bof (mechante va)"], correct: 1 }
+    { q: "Quand on s'est mis ensemble ?", a: ["21 Janvier", "20 Avril", "23 Décembre", "20 Janvier"], correct: 3 },
+    { q: "Le nombre de voies antérieures dans WWM (juste pour te faire chier celle-là ;)) ?", a: ["40", "35", "37", "41"], correct: 2 },
+    { q: "Ton parti politique", a: ["Du même que Moon", "Ga...(jpp écrire plus que ça)", "Droite", "Tractopelle ascendant renard (idée de Moon)"], correct: 0 },
+    { q: "Quel astre brille tout le temps ?", a: ["Le Soleil", "Les étoiles", "La Lune", "Mahé (bah ouais logique)"], correct: 3 },
+    { q: "Quelle date on s'est marié sur WWM ?", a: ["Jpp de tes questions de con 😭", "17 Janvier", "19 Janvier", "16 Janvier"], correct: 1 },
+    { q: "Quelle est la qualité que j'admire le plus chez toi ?", a: ["Rien 💀", "Ta bonté", "Tout, t'es la meilleure au monde je t'aime ❤️", "Laisse-moi réfléchir..."], correct: 2 },
+    { q: "Le nom de notre futur chien ?", a: ["Le Z", "Le H (je t'ai à l'œil 👀)", "Misty", "Wouaf wouaf (ouais je sais 0 inspi)"], correct: 2 },
+    { q: "Mon animal préféré ?", a: ["Chien", "Halouf", "Orque", "Aigle"], correct: 2 },
+    { q: "Nombre de persos dans One Piece ?", a: ["856", "Va te faire foutre ❤️", "936", "1012"], correct: 2 },
+    { q: "Dernière question : Prête pour le secret ?", a: ["Pas encore", "Oui ❤️✨", "Peut-être", "Bof (méchante va)"], correct: 1 }
 ];
 
 let currentQuestion = 0;
