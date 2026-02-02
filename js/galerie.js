@@ -1,10 +1,14 @@
 const photos = [
-    { url: 'https://picsum.photos/200/200?random=1', caption: 'Un beau jour' },
-    { url: 'https://picsum.photos/200/200?random=2', caption: 'Rires éclatants' },
-    { url: 'https://picsum.photos/200/200?random=3', caption: 'Douceur' },
-    { url: 'https://picsum.photos/200/200?random=4', caption: 'Magique' },
-    { url: 'https://picsum.photos/200/200?random=5', caption: 'Ensemble' },
-    { url: 'https://picsum.photos/200/200?random=6', caption: 'Souvenir' }
+    { url: '../img/janvier.jpg', caption: 'Un beau jour' },
+    { url:'../img/bs.jpg' , caption: 'Souvenir' },
+    { url: '../img/gep.png', caption: 'Super moments' },
+    { url: '../img/greatest.jpg', caption: 'Souvenir' },
+    { url: '../img/josee.webp', caption: 'Magique' },
+    { url: '../img/wwm.png', caption: 'Ensemble' },
+    { url: '../img/zootopie.webp', caption: 'Souvenir' },
+    { url: '../img/blue.jpeg', caption: 'Souvenir' },
+    { url: '../img/sso.webp', caption: 'Souvenir' },
+    { url: '../img/op.png', caption: 'Avenir' },
 ];
 
 const wall = document.getElementById('gallery-wall');
