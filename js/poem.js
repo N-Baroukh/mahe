@@ -77,9 +77,9 @@ function unlockSecret() {
     const password = prompt("Veuillez entrer le mot de passe secret pour accéder au mystère :");
 
     // Remplace 'Amour' par le mot de passe de ton choix
-    if (password === "Amour" || password === "amour") {
+    if (password === "CHOCOLATIN" || password === "Chocolatin") {
         alert("Accès accordé... ❤️");
-        window.location.href = "mystere.html"; // La page vers laquelle rediriger
+        window.location.href = "galerie.html"; // La page vers laquelle rediriger
     } else if (password !== null) {
         alert("Mot de passe incorrect. Le secret reste gardé.");
     }

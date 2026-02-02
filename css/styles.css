@@ -1,80 +1,169 @@
 body {
-    background: radial-gradient(circle at top, #020617, #000);
-    color: #e5e7eb;
+    /* Un dégradé plus soutenu avec un rose foncé en bas */
+    background: radial-gradient(circle at top, #fce7f3, #fbcfe8, #f472b6);
+    color: #4c0519; /* Un bordeaux très profond pour la lisibilité */
     font-family: 'Georgia', serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
+/* Conteneur principal */
 .container {
     text-align: center;
     width: 90%;
-    max-width: 700px;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.8); /* Moins transparent pour détacher du fond foncé */
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(157, 23, 77, 0.3); /* Ombre rosée plus sombre */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    animation: fadeIn 1.5s ease-out;
 }
 
-.poem {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    white-space: pre-line;
-    text-align: left; /* Garder le poème aligné à gauche */
-    display: inline-block;
-}
-
-.cursor {
-    display: inline-block;
-    width: 8px;
-    background: #e5e7eb;
-    margin-left: 4px;
-    animation: blink 0.9s infinite;
-    height: 1.3em;
-    vertical-align: bottom;
-}
-
-/* Zone des jeux */
-.games-hidden {
-    display: none;
-    opacity: 0;
-}
-
-.games-visible {
-    display: block;
-    margin-top: 40px;
-    animation: fadeIn 2s forwards;
-}
-
-.games-title {
-    font-style: italic;
-    color: #9ca3af;
+/* Poème */
+.poem-wrapper {
     margin-bottom: 20px;
 }
 
+.poem {
+    font-size: 1.25rem;
+    line-height: 1.9;
+    white-space: pre-line;
+    text-align: left;
+    display: inline-block;
+}
+
+/* Curseur machine à écrire */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background: #be185d;
+    animation: blink 0.9s infinite;
+}
+
+/* Cartes de jeu - Plus de contraste */
+.game-card {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    color: #831843; /* Rose foncé */
+    text-decoration: none;
+    background: #ffffff;
+    border: 2px solid #f472b6; /* Bordure plus marquée */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(157, 23, 77, 0.1);
+}
+
+.game-card:hover {
+    transform: scale(1.1);
+    background: #fdf2f8;
+    border-color: #be185d;
+    color: #9d174d;
+    box-shadow: 0 12px 30px rgba(190, 24, 93, 0.4);
+}
+
+/* Petite phrase romantique */
+.subtitle {
+    font-style: italic;
+    color: #9f1239;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/* Jeux */
 .games-list {
     display: flex;
-    gap: 15px;
+    gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-/* Ajoute ça à ton CSS actuel */
-.game-card {
-    padding: 12px 20px;
-    border: 1px solid #374151;
-    border-radius: 8px;
-    color: #e5e7eb;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-    user-select: none; /* Évite de sélectionner le texte au clic */
+    /* Conteneur avec un flou léger en arrière-plan */
+    .container {
+        text-align: center;
+        width: 90%;
+        max-width: 600px;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 30px;
+        box-shadow: 0 20px 50px rgba(225, 29, 72, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        z-index: 10;
+        animation: fadeIn 1.5s ease-out;
+    }
+
+    .poem {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        min-height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .cursor {
+        display: inline-block;
+        width: 3px;
+        background: #e11d48;
+        animation: blink 0.9s infinite;
+    }
+
+    .game-card {
+        display: inline-block;
+        margin: 10px;
+        padding: 15px 25px;
+        border-radius: 50px; /* Plus rond = plus cute */
+        color: #9f1239;
+        text-decoration: none;
+        background: white;
+        border: 2px solid #fda4af;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .game-card:hover {
+        transform: scale(1.1);
+        background: #ffe4e6;
+        border-color: #e11d48;
+    }
+
+    /* Animation des cœurs flottants */
+.heart {
+    position: absolute;
+    color: #f472b6;
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    animation: floatUp linear infinite;
+    opacity: 0.7;
 }
 
-.game-card:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: #ff4d6d;
-    transform: translateY(-3px);
+@keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes blink { 50% { opacity: 0; } }
-@keyframes fadeIn { to { opacity: 1; } }
+
+/* Carte verrouillée */
+.game-card.locked {
+    opacity: 0.6;
+}
+
+/* Animations */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
