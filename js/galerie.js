@@ -1,5 +1,5 @@
 const photos = [
-    { url: '../img/janvier.jpg', caption: 'Un beau jour' },
+    { url: '../img/janvier.jpg', caption: 'Un des plus beau jour' },
     { url:'../img/bs.jpg' , caption: 'Souvenir' },
     { url: '../img/gep.png', caption: 'Super moments' },
     { url: '../img/greatest.jpg', caption: 'Souvenir' },

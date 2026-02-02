@@ -1,15 +1,15 @@
-const finalPassword = "CHOCOLATIN"; // Ton mot de passe de 10 lettres
+const finalPassword = "MAGOUILLES";
 const questions = [
-    { q: "Quelle fleur symbolise souvent l'amour ?", a: ["Rose", "Tulipe", "Marguerite", "Pissenlit"], correct: 0 },
-    { q: "Quelle est la couleur préférée du romantisme ?", a: ["Bleu", "Rouge", "Vert", "Jaune"], correct: 1 },
-    { q: "Combien de lettres y a-t-il dans 'Toujours' ?", a: ["7", "8", "9", "10"], correct: 1 },
-    { q: "Quel astre brille la nuit ?", a: ["Le Soleil", "Mars", "La Lune", "Vénus"], correct: 2 },
-    { q: "Quel mois fête-t-on la St-Valentin ?", a: ["Janvier", "Février", "Mars", "Avril"], correct: 1 },
-    { q: "Quelle saveur est synonyme de douceur ?", a: ["Acide", "Salé", "Sucré", "Pimenté"], correct: 2 },
-    { q: "Qui a écrit Roméo et Juliette ?", a: ["Molière", "Hugo", "Shakespeare", "Zola"], correct: 2 },
-    { q: "Où se trouve la Tour Eiffel ?", a: ["Londres", "Paris", "Berlin", "Rome"], correct: 1 },
-    { q: "Quel petit ange tire des flèches ?", a: ["Cupidon", "Hermès", "Zeus", "Éros"], correct: 0 },
-    { q: "Dernière question : Prêt pour le secret ?", a: ["Pas encore", "Oui !", "Peut-être", "Bof"], correct: 1 }
+    { q: "Quand on c'est mis ensemble ?", a: ["21 Janvier", "20 Avril", "23 Decembre", "20 Janvier"], correct: 3 },
+    { q: "Le nombre de voies anterieur dans WWM (juste pour te faire chier celle la ;)) ?", a: ["40", "35", "37", "41"], correct: 2 },
+    { q: "Ton partie politique", a: ["Du même que moon", "Ga...(jpp ecrire plus que ca)", "Droite", "Tractopelle ascendant renard (idée de moon)"], correct: 0 },
+    { q: "Quel astre brille tout le temps ?", a: ["Le Soleil", "Les étoiles", "La Lune", "Mahé (bas ouai logique)"], correct: 3 },
+    { q: "Quel date on c'est marié sur WWM ?", a: ["Jpp de tes questions de con 😭", "17 Janvier ", "19 Janvier", "16 Janvier"], correct: 1 },
+    { q: "Quelle est la qualité que j'admire le plus chez toi ?", a: ["Rien 💀", "Ta bonté", "Tout t'es la meilleure au monde je t'aime ❤️", "Laisse moi réflechir..."], correct: 2 },
+    { q: "Le nom de notre futur chien ?", a: ["Le Z", "Le H (je t'es à l'oeil 👀)", "Misty", "Wouaf wouaf (ouai je sais 0 inspi)"], correct: 2 },
+    { q: "Mon animal préféré ?", a: ["Chien", "Halouf", "Orcque", "Aigle"], correct: 2 },
+    { q: "Nombre perso dans one piece  ?", a: ["856", "Va te faire foutre ❤️", "936", "1012"], correct: 2 },
+    { q: "Dernière question : Prête pour le secret ?", a: ["Pas encore", "Oui ❤️✨", "Peut-être", "Bof (mechante va)"], correct: 1 }
 ];
 
 let currentQuestion = 0;

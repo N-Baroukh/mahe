@@ -77,10 +77,10 @@ function unlockSecret() {
     const password = prompt("Veuillez entrer le mot de passe secret pour accéder au mystère :");
 
     // Remplace 'Amour' par le mot de passe de ton choix
-    if (password === "CHOCOLATIN" || password === "Chocolatin") {
+    if (password === "MAGOUILLES" || password === "Magouilles" || password === "magouilles") {
         alert("Accès accordé... ❤️");
         window.location.href = "galerie.html"; // La page vers laquelle rediriger
     } else if (password !== null) {
-        alert("Mot de passe incorrect. Le secret reste gardé.");
+        alert("Mot de passe incorrect. Le secret reste gardé. Fais le quizz pour le découvrir !");
     }
 }
