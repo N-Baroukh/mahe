@@ -29,7 +29,14 @@ box.addEventListener('click', (e) => {
     if (count === maxClicks) {
         box.style.display = 'none';
         counterDisplay.style.display = 'none';
-        message.style.display = 'block';
+
+        // --- LA MODIFICATION ICI ---
+        message.style.display = 'block'; // On s'assure qu'il est dans le DOM
+        setTimeout(() => {
+            message.classList.add('show'); // On ajoute la classe qui gère l'opacité et l'animation
+        }, 10);
+        // ----------------------------
+
         finalExplosion();
     }
 });
