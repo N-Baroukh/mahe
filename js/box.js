@@ -11,24 +11,25 @@ box.addEventListener('click', (e) => {
     count++;
     counterDisplay.innerText = `Cliqué : ${count} / ${maxClicks}`;
 
-    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-    createEmoji(e.clientX, e.clientY, randomEmoji);
-    let progress = count / maxClicks;
-    box.style.opacity = 1 - (progress * 0.7);
-    box.style.filter = `grayscale(${progress * 100}%) blur(${progress * 2}px)`;
+    // Effet de secousse sur l'écran au clic
+    document.body.classList.add('hit-shake');
+    setTimeout(() => document.body.classList.remove('hit-shake'), 100);
 
-    if (count > 35) {
-        box.classList.add('shake');
+    // Création de plusieurs emojis pour plus d'impact
+    for(let i = 0; i < 3; i++) {
+        createEmoji(e.clientX, e.clientY, emojis[Math.floor(Math.random() * emojis.length)]);
+    }
+
+    let progress = count / maxClicks;
+    box.style.transform = `scale(${1 - progress * 0.2}) rotate(${Math.random() * 10 - 5}deg)`;
+    box.style.filter = `grayscale(${progress * 100}%) blur(${progress * 1.5}px)`;
+
+    if (count > 30) {
+        box.classList.add('vibrate'); // On remplace shake par vibrate pour l'intensité
     }
 
     if (count === maxClicks) {
-        box.style.display = 'none';
-        counterDisplay.style.display = 'none';
-        message.style.display = 'block';
-        setTimeout(() => {
-            message.classList.add('show');
-        }, 10);
-        finalExplosion();
+        triggerFinalSequence();
     }
 });
 
@@ -36,20 +37,31 @@ function createEmoji(x, y, char) {
     const emoji = document.createElement('div');
     emoji.classList.add('emoji');
     emoji.innerText = char;
-    emoji.style.left = `${x - 25}px`;
-    emoji.style.top = `${y - 25}px`;
+
+    // Position aléatoire légère autour du clic
+    const offsetX = (Math.random() - 0.5) * 100;
+    const offsetY = (Math.random() - 0.5) * 100;
+
+    emoji.style.left = `${x + offsetX}px`;
+    emoji.style.top = `${y + offsetY}px`;
 
     document.body.appendChild(emoji);
-    setTimeout(() => emoji.remove(), 1200);
+    setTimeout(() => emoji.remove(), 1000);
 }
 
-function finalExplosion() {
-    for(let i = 0; i < 50; i++) {
+function triggerFinalSequence() {
+    box.style.display = 'none';
+    counterDisplay.style.display = 'none';
+
+    // Explosion massive
+    for(let i = 0; i < 100; i++) {
         setTimeout(() => {
             const x = Math.random() * window.innerWidth;
             const y = Math.random() * window.innerHeight;
-            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-            createEmoji(x, y, randomEmoji);
-        }, i * 50);
+            createEmoji(x, y, emojis[Math.floor(Math.random() * emojis.length)]);
+        }, i * 15);
     }
+
+    message.style.display = 'block';
+    setTimeout(() => message.classList.add('show'), 100);
 }
