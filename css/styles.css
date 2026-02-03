@@ -1,72 +1,64 @@
+/* --- RESET & BASE --- */
+* {
+    box-sizing: border-box; /* Crucial pour que les paddings ne cassent pas la largeur sur mobile */
+}
+
 body {
     /* Un dégradé plus soutenu avec un rose foncé en bas */
     background: radial-gradient(circle at top, #fce7f3, #fbcfe8, #f472b6);
-    color: #4c0519; /* Un bordeaux très profond pour la lisibilité */
+    color: #4c0519; /* Bordeaux profond pour la lisibilité */
     font-family: 'Georgia', serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    overflow: hidden;
+    /* On autorise le scroll vertical sur mobile si le poème est long */
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
 }
 
-/* Conteneur principal */
+/* --- CONTENEUR PRINCIPAL --- */
 .container {
     text-align: center;
-    width: 90%;
+    width: 100%;
     max-width: 600px;
-    background: rgba(255, 255, 255, 0.8); /* Moins transparent pour détacher du fond foncé */
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
-    padding: 40px;
+    -webkit-backdrop-filter: blur(10px); /* Support Safari */
+    padding: 30px 20px; /* Padding réduit sur mobile */
     border-radius: 30px;
-    box-shadow: 0 20px 50px rgba(157, 23, 77, 0.3); /* Ombre rosée plus sombre */
+    box-shadow: 0 20px 50px rgba(157, 23, 77, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.5);
     z-index: 10;
     animation: fadeIn 1.5s ease-out;
 }
 
-/* Poème */
+/* --- POÈME --- */
 .poem-wrapper {
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .poem {
-    font-size: 1.25rem;
-    line-height: 1.9;
+    font-size: 1.1rem; /* Taille de base mobile */
+    line-height: 1.7;
     white-space: pre-line;
     text-align: left;
     display: inline-block;
+    max-width: 100%;
 }
 
 /* Curseur machine à écrire */
 .cursor {
     display: inline-block;
     width: 3px;
+    height: 1.2rem;
     background: #be185d;
     animation: blink 0.9s infinite;
-}
-
-/* Cartes de jeu - Plus de contraste */
-.game-card {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 25px;
-    border-radius: 50px;
-    color: #831843; /* Rose foncé */
-    text-decoration: none;
-    background: #ffffff;
-    border: 2px solid #f472b6; /* Bordure plus marquée */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 5px 15px rgba(157, 23, 77, 0.1);
-}
-
-.game-card:hover {
-    transform: scale(1.1);
-    background: #fdf2f8;
-    border-color: #be185d;
-    color: #9d174d;
-    box-shadow: 0 12px 30px rgba(190, 24, 93, 0.4);
+    vertical-align: middle;
+    margin-left: 2px;
 }
 
 /* Petite phrase romantique */
@@ -74,66 +66,45 @@ body {
     font-style: italic;
     color: #9f1239;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
 }
 
-/* Jeux */
+/* --- JEUX & BOUTONS --- */
 .games-list {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur mobile */
 }
 
-    /* Conteneur avec un flou léger en arrière-plan */
-    .container {
-        text-align: center;
-        width: 90%;
-        max-width: 600px;
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        padding: 40px;
-        border-radius: 30px;
-        box-shadow: 0 20px 50px rgba(225, 29, 72, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        z-index: 10;
-        animation: fadeIn 1.5s ease-out;
-    }
+.game-card {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 50px;
+    color: #831843;
+    text-decoration: none;
+    background: #ffffff;
+    border: 2px solid #f472b6;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(157, 23, 77, 0.1);
+    font-size: 0.95rem;
+}
 
-    .poem {
-        font-size: 1.3rem;
-        line-height: 1.8;
-        min-height: 100px;
-        margin-bottom: 20px;
-    }
+.game-card:hover {
+    transform: scale(1.05); /* Scale légèrement réduit pour éviter les bugs sur mobile */
+    background: #fdf2f8;
+    border-color: #be185d;
+    color: #9d174d;
+    box-shadow: 0 10px 25px rgba(190, 24, 93, 0.4);
+}
 
-    .cursor {
-        display: inline-block;
-        width: 3px;
-        background: #e11d48;
-        animation: blink 0.9s infinite;
-    }
+.game-card.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
-    .game-card {
-        display: inline-block;
-        margin: 10px;
-        padding: 15px 25px;
-        border-radius: 50px; /* Plus rond = plus cute */
-        color: #9f1239;
-        text-decoration: none;
-        background: white;
-        border: 2px solid #fda4af;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-
-    .game-card:hover {
-        transform: scale(1.1);
-        background: #ffe4e6;
-        border-color: #e11d48;
-    }
-
-    /* Animation des cœurs flottants */
+/* --- ANIMATIONS DES CŒURS --- */
 .heart {
     position: absolute;
     color: #f472b6;
@@ -142,10 +113,30 @@ body {
     pointer-events: none;
     animation: floatUp linear infinite;
     opacity: 0.7;
+    z-index: 1;
 }
 
+/* --- MEDIA QUERIES (AJUSTEMENTS TABLETTES/PC) --- */
+@media (min-width: 600px) {
+    .container {
+        padding: 40px;
+    }
+    .poem {
+        font-size: 1.25rem;
+        line-height: 1.9;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .game-card {
+        padding: 15px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* --- KEYFRAMES --- */
 @keyframes floatUp {
-    0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+    0% { transform: translateY(105vh) rotate(0deg); opacity: 1; }
     100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
 }
 
@@ -154,16 +145,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes blink { 50% { opacity: 0; } }
-
-/* Carte verrouillée */
-.game-card.locked {
-    opacity: 0.6;
-}
-
-/* Animations */
 @keyframes blink {
-    50% {
-        opacity: 0;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
