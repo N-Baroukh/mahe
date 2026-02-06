@@ -19,7 +19,7 @@ const steps = [
     { type: "write", text: "heureuse \n" },
     { type: "deleteLine" },
     { type: "write", text: "La plus heureuse des femmes sur terre\n" },
-    { type: "write", text: "Cela fait depuis quelques semaines que je te préparais ça.\n" },
+    { type: "write", text: "Cela fait depuis quelque temps que je te préparais ça.\n" },
     { type: "write", text: "Et j'espère que ça te plaira.\n" },
     { type: "write", text: "Je t'aime ❤️✨\n" },
     { type: "write", text: "Désolé pour les fautes d'orthographe ;).\n" },
